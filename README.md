@@ -5,14 +5,7 @@ Practical_Python_Notes
 
 
 
-### 01-数据读取与导出
-
-- [x] 读取MySQL
-
-- [x] 读取Hive
-- [x] 读取Excel、csv、txt文件
-- [x] 输出至Excel、csv文件
-- [x] 输出至数据库、HTML
+### [01-数据读取与导出](01-数据读取与导出.md)
 
 ### 02-数据概览
 
