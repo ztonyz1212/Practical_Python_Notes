@@ -17,3 +17,8 @@ Practical_Python_Notes
 
 ### 06-日期/地理信息处理
 
+
+
+有两个list：A和B，写成a~b
+
+A+np.tile('~',len(A))+B
