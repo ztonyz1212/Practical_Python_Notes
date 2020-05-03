@@ -1,0 +1,134 @@
+
+
+# 02-数据表检查
+
+[数据表概览](#数据表概览)
+
+[维度检查](#数据表维度检查)
+
+[缺失值检查](#数据表缺失值检查)
+
+[唯一值检查](#数据表唯一值检查)
+
+[列元素计数检查](#数据表列元素计数检查)
+
+[统计信息检查](#数据表统计信息检查)
+
+<br/>
+
+## 数据表概览
+
+```python
+# 查看前(后)5行数据
+df.head()
+df.tail()
+
+# 查看列名称
+df.columns
+
+# 查看数据表某列的数值
+df['category'].values
+```
+
+<br/>
+
+------
+
+## 数据表维度检查
+
+```python
+# 数据维度
+df.shape
+
+# 数据表信息
+df.info()
+
+# 查看数据格式
+df.dtypes
+
+# 查看数据前五行和对应的格式
+a = df.dtypes.to_frame().join(df.head().T, lsuffix='_type')
+```
+
+<br/>
+
+------
+
+## 数据表缺失值检查
+
+```python
+# 检查缺失值
+df.isnull()
+df['price'].isnull()
+
+# 计算缺失值数量
+df.isnull().sum()
+
+# 计算缺失率
+df.isnull().sum(axis=0).sort_values(ascending=False)/float(len(df))
+```
+
+<br/>
+
+------
+
+## 数据表唯一值检查
+
+```python
+# 查看某列的唯一值
+df['city'].unique()
+
+# 计算某列唯一值的数量
+df['city'].nunique()
+
+# 枚举所有变量的唯一值
+ccc = [df[x].unique().tolist() for x in df.columns]
+c = pd.Series(ccc, index=df.columns)
+
+# 检查是否有重复的变量
+len(set(list(df.columns))) == df.shape[1]
+```
+
+<br/>
+
+------
+
+## 数据表列元素计数检查
+
+```python
+# 查看各列非空元素个数
+df.count()
+
+# 计算某列各取值的计数
+df['city'].value_counts()
+
+# 计算某列各取值的计数占比
+df['city'].value_counts(normalize=True)
+
+# 计算某列各取值的计数占比并排序
+df['city'].value_counts(normalize=True, sort=True)
+```
+
+<br/>
+
+------
+
+## 数据表统计信息检查
+
+```python
+# 数据表描述性统计 
+df.describe()
+
+# 分位数
+df.quantile(0.25) #四分之一位数
+df.quantile(0.75) #四分之三位数
+df.quantile(0.25, axis=1) #每一行的四分之一位数
+
+# 返回某列最大（小）值所对应的index
+df['age'].idxmax()
+df['age'].idxmin()
+
+# 返回某列最大（小）值的前三
+df['age'].nlargest(3)
+df['age'].nsmallest(3)
+```
