@@ -1,4 +1,4 @@
-Practical_Python_Notes
+怕c这些Practical_Python_Notes
 
 > Collecting commonly used Python tips in daily works
 >
