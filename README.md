@@ -25,8 +25,8 @@ Practical_Python_Notes
 
 <br/>
 
-> 学习参考资料：
->
+##### 学习参考资料：
+
 > [1] Wes McKinney. 利用Python进行数据分析：机械工业出版社
 >
 > [2] 王彦平(蓝鲸). 从Excel到Python数据分析进阶指南：人民电邮出版社
