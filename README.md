@@ -1,6 +1,6 @@
 Practical_Python_Notes
 
-> Collections of Python Tips in Daily Works
+> Collections of Python Notes in Daily Works
 >
 
 <br/>
